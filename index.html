@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma trilha de 24 semanas para transformar trabalho com IA em entregas confiaveis, evidencias de competencia e oportunidades profissionais.">
+  <title>Oficina IA | Da capacidade a entrega</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteudo</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegacao principal">
+      <a class="brand" href="#dashboard"><span class="brand-mark" aria-hidden="true">O<span>IA</span></span><span>OFICINA <b>IA</b><small>CAPACIDADE EM PRATICA</small></span></a>
+      <div class="sidebar-label">SEU ESPACO DE EVOLUCAO</div>
+      <nav id="navigation">
+        <a href="#dashboard" data-nav="dashboard"><span class="nav-number">01</span>Visao geral</a>
+        <a href="#path" data-nav="path"><span class="nav-number">02</span>Minha trilha</a>
+        <a href="#lab" data-nav="lab"><span class="nav-number">03</span>Laboratorio</a>
+        <a href="#career" data-nav="career"><span class="nav-number">04</span>Carreira e renda</a>
+        <a href="#library" data-nav="library"><span class="nav-number">05</span>Biblioteca</a>
+        <a href="#rewards" data-nav="rewards"><span class="nav-number">06</span>Conquistas</a>
+      </nav>
+      <div class="sidebar-label second-label">BASTIDORES DO PROJETO</div>
+      <nav>
+        <a href="#tracker" data-nav="tracker"><span class="nav-number">07</span>Tracker de acoes</a>
+        <a href="#architecture" data-nav="architecture"><span class="nav-number">08</span>Mapa do sistema</a>
+        <a href="#settings" data-nav="settings"><span class="nav-number">09</span>Meu plano e dados</a>
+      </nav>
+      <div class="sidebar-bottom"><span class="tiny-label">SEU COMPROMISSO</span><strong id="sidebar-hours">6 horas / semana</strong><p>Uma entrega aceita.<br>Depois, o proximo passo.</p><div class="local-label"><span class="status-dot"></span>Dados neste computador</div></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><button id="menu-toggle" class="icon-button mobile-only" aria-label="Abrir navegacao" aria-expanded="false">Menu</button><div class="breadcrumb"><span>OFICINA PESSOAL</span><b id="page-label">Visao geral</b></div><div class="topbar-actions"><span id="save-status" class="save-status" role="status">Conectando</span><button class="button button-quiet compact" id="export-top">Exportar progresso</button><a class="avatar" href="#settings" aria-label="Abrir perfil">M</a></div></header>
+      <main id="main" tabindex="-1"><div class="loading-state"><span class="loading-line"></span><h1>Preparando sua oficina</h1><p>Carregando a trilha e os registros salvos neste computador.</p></div></main>
+      <footer class="page-footer"><span>Construir. Explicar. Verificar. Entregar.</span><span>Progresso com evidencia, no seu ritmo.</span></footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="task-dialog" aria-labelledby="task-dialog-title"><div id="task-dialog-content"></div></dialog>
+</body>
+</html>

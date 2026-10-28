@@ -1,0 +1,166 @@
+{
+  "summary": "Public browser edition; excludes the private SQLite engineering tracker.",
+  "nodes": [
+    {
+      "id": "browser",
+      "label": "Interface de aprendizagem",
+      "file": "app.js",
+      "evidence": [
+        {
+          "file": "app.js",
+          "line": 1,
+          "sha256": "8d1f1c97255b7b273abf4226e5d7be9c4ffbb4c78908d514a0d133c803dde467",
+          "origin": "code"
+        }
+      ]
+    },
+    {
+      "id": "server",
+      "label": "Hospedagem estatica GitHub Pages",
+      "file": "index.html",
+      "origin": "curated",
+      "evidence": [
+        {
+          "file": "index.html",
+          "line": 1,
+          "sha256": "e9425dd485b94c5edc938f303b13f82d837a79cf0b3b85be4d8c8d438a06a211",
+          "origin": "curated"
+        }
+      ]
+    },
+    {
+      "id": "domain",
+      "label": "Regras formativas de progresso",
+      "file": "pages-domain.js",
+      "evidence": [
+        {
+          "file": "pages-domain.js",
+          "line": 1,
+          "sha256": "7e5f234a983a14c2de5e89f86c70765a2d78f48e75e52bb04967992fcfbbda94",
+          "origin": "code"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "label": "Eventos privados neste navegador",
+      "file": "pages-store.js",
+      "evidence": [
+        {
+          "file": "pages-store.js",
+          "line": 1,
+          "sha256": "9c1351eb249be500cfbaad2a7c4ba56407c520162b45e8cf8153acb0fb091595",
+          "origin": "code"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "server",
+      "target": "browser",
+      "kind": "delivers assets",
+      "evidence": [
+        {
+          "file": "index.html",
+          "line": 1,
+          "sha256": "e9425dd485b94c5edc938f303b13f82d837a79cf0b3b85be4d8c8d438a06a211",
+          "origin": "code"
+        }
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "domain",
+      "kind": "validates learning",
+      "evidence": [
+        {
+          "file": "transport.js",
+          "line": 1,
+          "sha256": "5418b2e61a6e02d3c63b44713ac2de558e65610c71ad9260e9f49a3851f10cd4",
+          "origin": "code"
+        }
+      ]
+    },
+    {
+      "source": "domain",
+      "target": "store",
+      "kind": "persists events",
+      "evidence": [
+        {
+          "file": "pages-domain.js",
+          "line": 1,
+          "sha256": "7e5f234a983a14c2de5e89f86c70765a2d78f48e75e52bb04967992fcfbbda94",
+          "origin": "code"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "e9425dd485b94c5edc938f303b13f82d837a79cf0b3b85be4d8c8d438a06a211",
+      "lines": 46
+    },
+    {
+      "path": "app.js",
+      "sha256": "8d1f1c97255b7b273abf4226e5d7be9c4ffbb4c78908d514a0d133c803dde467",
+      "lines": 253
+    },
+    {
+      "path": "styles.css",
+      "sha256": "f55935fd35e90fd9cad267b17980f3408dfc7aa27728c2e6042115b86478612e",
+      "lines": 9
+    },
+    {
+      "path": "palette.css",
+      "sha256": "6f124e4cbd610140bf623d1f6519929e5335325b44ee3e09431156e652fcbfbb",
+      "lines": 3
+    },
+    {
+      "path": "tools.js",
+      "sha256": "95f7d81d1741c3f165cd26306f1c46dbe75c905d8b3a8255ff9eee930c85e863",
+      "lines": 22
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "cb1beb310d95dca0030b420db407c9cc3f4977bfbc52c355fd9db45a8ef27210",
+      "lines": 2
+    },
+    {
+      "path": "pages-store.js",
+      "sha256": "9c1351eb249be500cfbaad2a7c4ba56407c520162b45e8cf8153acb0fb091595",
+      "lines": 49
+    },
+    {
+      "path": "transport.js",
+      "sha256": "5418b2e61a6e02d3c63b44713ac2de558e65610c71ad9260e9f49a3851f10cd4",
+      "lines": 49
+    },
+    {
+      "path": "pages-domain.js",
+      "sha256": "7e5f234a983a14c2de5e89f86c70765a2d78f48e75e52bb04967992fcfbbda94",
+      "lines": 275
+    },
+    {
+      "path": "curriculum.json",
+      "sha256": "7f742e96b62b8335d3be577646b6dbfa00cc015aa001da223d6a9d92dea87c65",
+      "lines": 209
+    },
+    {
+      "path": "rewards.json",
+      "sha256": "9a7f518e23ca3baef65562c9b5b7f5511cef785d1b9d44b09763069b00546057",
+      "lines": 10
+    }
+  ],
+  "diagrams": {
+    "context": "flowchart LR\n  Pages[GitHub Pages] --> Browser[Interface]\n  Browser --> Rules[Regras formativas]\n  Rules --> Storage[Armazenamento do navegador]\n",
+    "privacy": "sequenceDiagram\n  participant U as Aprendiz\n  participant B as Navegador\n  participant L as Armazenamento local\n  U->>B: Registra atividade\n  B->>B: Valida e recalcula\n  B->>L: Persiste eventos\n  Note over B,L: Notas nao sao enviadas ao GitHub\n"
+  },
+  "method": "Build allowlist with file hashes; component meaning is curated. This public edition has no SQLite server.",
+  "warnings": [
+    "O dono do navegador pode alterar seus dados. XP nao e certificacao.",
+    "O armazenamento depende deste navegador e dispositivo. Exporte copias periodicas.",
+    "O tracker privado do projeto nao faz parte desta publicacao."
+  ]
+}

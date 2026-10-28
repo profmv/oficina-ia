@@ -1,0 +1,9 @@
+{
+  "summary": "Optional self-administered rewards; no financial value or professional certification.",
+  "rewards": [
+    {"id":"r-pausa","title":"Pausa sem culpa","description":"Reserve 20 minutos para uma atividade que voce aprecia, depois de registrar sua evidencia.","cost":8},
+    {"id":"r-escolha","title":"Escolha o proximo desafio","description":"Personalize um exercicio com um problema seu, mantendo os mesmos criterios de aceite.","cost":20},
+    {"id":"r-vitrine","title":"Sessao de vitrine","description":"Reserve uma hora para preparar uma demonstracao do que ja funciona, sem abrir outra frente.","cost":40},
+    {"id":"r-celebracao","title":"Celebracao do capstone","description":"Escolha uma pequena celebracao pessoal apos fechar um ciclo de entrega e recuperacao.","cost":80}
+  ]
+}
